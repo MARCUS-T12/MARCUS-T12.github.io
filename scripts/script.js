@@ -87,7 +87,7 @@ function respuesta(opcion) {
 
                 }, 500); // Esperar a que la transición de opacidad termine
 
-            }, 2000); // Esperar 2 segundos antes de comenzar a ocultar el mensaje
+            }, 3000); // Esperar 2 segundos antes de comenzar a ocultar el mensaje
 
         };
     } else {
