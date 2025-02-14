@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 5vh 5vw;
+    margin: auto;
+    padding:0;
     background-image: url('../img/fondo.png');
     background-size: cover;
     background-position: center;
@@ -10,6 +11,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    justify-content: center; /* Centra todo en la pantalla */
 }
 
 h1 {
@@ -51,8 +53,9 @@ h1 {
     opacity: 1;
 }
 
+/* 📌 Corrección: Centrar completamente el contenido de la carta */
 .carta {
-    width: 60vw;
+    width: 90%;
     max-width: 250px;
     height: 40vw;
     max-height: 150px;
@@ -60,7 +63,7 @@ h1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 5vh auto;
+    margin: auto;
     padding: 4vh;
     position: relative;
     color: #000;
@@ -71,15 +74,28 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column; /* Asegura que el texto se mantenga alineado */
+    word-wrap: break-word; /* Evita que el texto se salga */
+    max-width: 90%; /* No permite que el contenido desborde */
 }
 
-.carta p{
+.carta p {
     color: #ff80b1;
-    font-size:  3vw;
+    font-size: 3vw;
+    margin: 0;
+    padding: 0 5%; /* Espaciado interno para evitar desbordes */
+}
+
+/* Centrar la carta en la pantalla */
+#cartaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
 }
 
 #videoContainer {
-    max-width: 100%;
     text-align: center;
 }
 
@@ -88,19 +104,23 @@ h1 {
     max-width: 600px;
 }
 
+/* 📌 Corrección: Centrar completamente el mensaje final */
 #mensajeFinal {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease-in-out;
     text-align: center;
+    flex-direction: column;
 }
 
 #mensajeFinal h1 {
     font-size: 10vw;
     color: #ff3366;
+    margin: 0;
+    padding: 0;
 }
 
+/* Animaciones */
 @keyframes oscilar {
     0% { transform: rotate(5deg); }
     50% { transform: rotate(-5deg); }
@@ -124,6 +144,7 @@ h1 {
     margin-right: 5px;
 }
 
+/* 📌 Ajustes para pantallas pequeñas */
 @media (max-width: 600px) {
     h1 {
         font-size: 7vw;
@@ -143,10 +164,12 @@ h1 {
         height: 50vw;
         font-size: 4vw;
         padding: 4vh;
+        max-width: 90%;
     }
 
     .carta p {
         font-size: 4vw;
+        padding: 0 8%; /* Más espacio para evitar desbordes */
     }
 
     #miVideo {
@@ -155,8 +178,11 @@ h1 {
     }
 
     #mensajeFinal h1 {
-        align-items: center;
-        justify-content: center;
         font-size: 12vw;
+    }
+
+    /* 📌 Asegurar centralización correcta de la carta */
+    #cartaContainer {
+        height: 40vh; /* Reduce el espacio en móviles */
     }
 }
