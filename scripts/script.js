@@ -70,25 +70,20 @@ function respuesta(opcion) {
             miVideo.play(); // Reproducir el video
         }, 1000); // Esperar 1 segundo
 
-        // Mostrar el mensaje al finalizar el video
         miVideo.onended = function() {
-
             videoContainer.style.display = 'none'; // Ocultar el video
-
-            mensajeFinal.style.display = 'block'; // Mostrar el mensaje "TE AMO"
-
+            mensajeFinal.style.display = 'flex'; // Mostrar el mensaje "TE AMO"
+            mensajeFinal.classList.add('fade-in'); // Agregar la clase para la animación
+        
             setTimeout(() => {
-
                 mensajeFinal.style.opacity = 0; // Hacer que el mensaje se vuelva invisible
-
+        
                 setTimeout(() => {
-
                     mensajeFinal.style.display = 'none'; // Ocultar el mensaje completamente
-
+                    mensajeFinal.classList.remove('fade-in'); // Quitar la clase para resetear
                 }, 500); // Esperar a que la transición de opacidad termine
-
-            }, 3000); // Esperar 2 segundos antes de comenzar a ocultar el mensaje
-
+        
+            }, 3000); // Esperar 3 segundos antes de comenzar a ocultar el mensaje
         };
     } else {
         noCounter++;

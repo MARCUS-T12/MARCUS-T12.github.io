@@ -111,6 +111,8 @@ h1 {
     align-items: center;
     text-align: center;
     flex-direction: column;
+    opacity: 1; 
+    transition: opacity 0.5s ease;
 }
 
 #mensajeFinal h1 {
