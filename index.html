@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="carta" class="carta" onclick="mostrarPregunta()">
+        <p>Te ha llegado una carta!</p>
+    </div>
+
+    <div id="contenido" style="display:none;">
+        <h1 id="pregunta">Hola Mi Amor, ¿Aceptas ser mi San Valentín?</h1>
+        <div class="heart"><img src="img/vida-amor.gif" alt="Animación GIF"></div>
+        <div class="container">
+            <button id="yesButton" class="button yes" onclick="respuesta('sí')">Sí</button>
+            <button id="noButton" class="button no" onclick="respuesta('no')">No</button>
+            <div id="respuesta" style="display:none;"></div> <!-- Contenedor para las respuestas -->
+        </div>
+    </div>
+
+    <!-- Elemento de video oculto inicialmente -->
+    <div id="videoContainer" style="display:none;">
+        <div id="loadingMessage" style="display:none;">Cargando...</div>
+        <video id="miVideo" width="600" autoplay>
+            <source src="img/Video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+
+    <!-- Mensaje que se mostrará al finalizar el video -->
+    <div id="mensajeFinal" style="display:none;">
+        <h1>ERES ESPECIAL PARA MI, TE AMO</h1>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
